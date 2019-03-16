@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>登录</title>
+</head>
+<body>
+<!--action代表往什么地方提交表单-->
+<!--这里使用thymeleaf进行提交，如果使用普通方法，把th属性去掉即可-->
+<form action="validata" th:method="post" th:object="${User}" >
+  <table>
+    <tr>
+      <td><label for="usr">用户名</label></td>
+      <td><input type="text" placeholder="请输入用户名" id="usr"  name="usr" th:field="*{usr}"></td>
+    </tr>
+    <tr>
+      <td><label for="pwd">密码</label></td>
+      <td><input type="text" placeholder="请输入用户名" id="pwd" name="pwd" th:filed="*{pwd}"></td>
+    </tr>
+    <tr>
+      <td><button type="reset">重置</button></td>
+      <td><button type="submit">登录</button></td>
+    </tr>
+
+  </table>
+</form>
+</body>
+</html>
